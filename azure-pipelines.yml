@@ -30,3 +30,8 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'warfile'
     publishLocation: 'Container'
+
+- script: |
+    echo "Failed test output:"
+    cat target/surefire-reports/*.txt || echo "No surefire text report found"
+  displayName: 'Print Surefire Test Report'
