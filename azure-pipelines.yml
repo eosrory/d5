@@ -31,7 +31,9 @@ steps:
     ArtifactName: 'warfile'
     publishLocation: 'Container'
 
-- script: |
-    echo "Failed test output:"
-    cat target/surefire-reports/*.txt || echo "No surefire text report found"
-  displayName: 'Print Surefire Test Report'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'target/surefire-reports'
+    ArtifactName: 'surefire-report'
+    publishLocation: 'Container'
+  displayName: 'Publish Surefire Test Reports'
