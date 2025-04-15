@@ -31,9 +31,3 @@ steps:
     ArtifactName: 'warfile'
     publishLocation: 'Container'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: 'target/surefire-reports'
-    ArtifactName: 'surefire-report'
-    publishLocation: 'Container'
-  displayName: 'Publish Surefire Test Reports'
